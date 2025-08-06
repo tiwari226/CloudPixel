@@ -125,12 +125,17 @@ export class Service{
         }
     }
 
-    getFilePreview(fileId){
-        return this.bucket.getFilePreview(
-            conf.appwriteBucketId,
-            fileId
-        )
-    }
+    // getFilePreview(fileId){
+    //     return this.bucket.getFilePreview(
+    //         conf.appwriteBucketId,
+    //         fileId
+    //     )
+    // }
+
+    getPublicFileURL(fileId) {
+    return `${conf.appwriteUrl}/storage/buckets/${conf.appwriteBucketId}/files/${fileId}/view?project=${conf.appwriteProjectId}`;
+}
+
 }
 
 
